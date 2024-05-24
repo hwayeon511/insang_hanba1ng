@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>랜덤 쿠키 레시피</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+    }
+    #header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
+    #recipe-container {
+        margin: 20px auto;
+        text-align: center;
+        width: 80%;
+        max-width: 600px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    #recipe {
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    #cookie {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    #recipe-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    #recipe-button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div id="header">
+    <h1>랜덤 쿠키 레시피</h1>
+</div>
+
+<div id="recipe-container">
+    <p id="recipe"></p>
+    <p id="cookie"></p>
+    <button id="recipe-button" onclick="showRandomRecipe()">레시피 보기</button>
+</div>
+
+<script>
+    // 쿠키 레시피 배열
+    var recipes = [
+        { name: "초콜릿 칩 쿠키", recipe: "밀가루 1 컵, 설탕 1/2 컵, 버터 1/2 컵, 달걀 1 개, 베이킹 소다 1/2 tsp, 소금 1/4 tsp, 바닐라 추출물 1 tsp, 초콜릿 칩 1 컵" },
+        { name: "오트밀 레이즌 쿠키", recipe: "오트밀 2 컵, 밀가루 1 1/2 컵, 소금 1/2 tsp, 베이킹 소다 1 tsp, 버터 1 컵, 설탕 1 컵, 갈색 설탕 1 컵, 달걀 2 개, 바닐라 추출물 1 tsp, 건포도 1 컵" },
+        { name: "슈가 쿠키", recipe: "밀가루 2 1/4 컵, 베이킹 소다 1/2 tsp, 소금 1/4 tsp, 버터 1 컵, 설탕 1 1/2 컵, 달걀 2 개, 바닐라 추출물 2 tsp" },
+        { name: "녹차 쿠키", recipe: "밀가루 2 컵, 녹차 분말 2 tbsp, 베이킹 파우더 1/2 tsp, 소금 1/4 tsp, 버터 3/4 컵, 설탕 1 컵, 달걀 1 개, 바닐라 추출물 1 tsp" },
+        { name: "마카다미아 넛 쿠키", recipe: "밀가루 2 1/4 컵, 베이킹 소다 1 tsp, 소금 1 tsp, 버터 1 컵, 설탕 3/4 컵, 갈색 설탕 3/4 컵, 달걀 2 개, 바닐라 추출물 1 tsp, 마카다미아 넛 1 컵" },
+        // 나머지 레시피들도 이와 같이 추가할 수 있습니다.
+    ];
+
+    // 랜덤한 레시피 보여주기
+    function showRandomRecipe() {
+        var randomIndex = Math.floor(Math.random() * recipes.length);
+        var recipe = recipes[randomIndex];
+        document.getElementById("recipe").textContent = recipe.name;
+        document.getElementById("cookie").textContent = "재료: " + recipe.recipe;
+    }
+</script>
+
+</body>
+</html>
